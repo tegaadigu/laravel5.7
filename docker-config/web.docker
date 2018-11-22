@@ -1,0 +1,8 @@
+FROM nginx:1.10
+
+RUN mkdir -p /etc/nginx/ssl
+
+ADD ./docker-config/configuration/vhost.conf /etc/nginx/conf.d/default.conf
+ADD ./docker-config/certs /etc/nginx/ssl
+
+WORKDIR /var/www
